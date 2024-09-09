@@ -5,7 +5,7 @@
 - `View task`: The signed-in user could see all of his/her tasks
 - `Search task`: The signed-in user could search his/her tasks
 - `Add task`: The user could add a new task, then press **↵ Enter** to save (doesn't allow empty)
-- `Update task`: The user could update a selected task inline, the description will be automatically saved after 1s of inactive (empty will not be saved, keep previous version)
+- `Update task`: The user could update a selected task inline, the description will be automatically saved after a short period of inactive (empty will not be saved, keep previous version)
 - `Delete task`: The user could delete a selected task
 
 ---
