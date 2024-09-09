@@ -33,7 +33,7 @@ To simplify the usage, TODO doesn't trictly follow the requirement like UI desig
 docker compose -f docker-compose.yaml -f development.yaml build
 docker compose -f docker-compose.yaml -f development.yaml up -d
 
-# Access TODO on port 10000
+# Access TODO on port http://localhost:10000
 ```
 
 ### 2. Run TODO in Debug mode
@@ -42,10 +42,12 @@ docker compose -f docker-compose.yaml -f development.yaml up -d
 docker compose -f docker-compose.yaml -f development.yaml build
 docker compose -f docker-compose.yaml -f development.yaml up -d
 
-# Run TODO locally on port 4200
+# Run app directly by Angular CLI
 cd ./app 
 npm install
 ng serve
+
+# Access TODO on port http://localhost:4200
 ```
 
 ### 3. Emails (use to login)
@@ -54,6 +56,8 @@ ng serve
 - loki@email.test
 
 ### Demo Video
+- Find demo video at path **demo/todo-demo.mp4**
+
 <div align="center">
     <video width="520" height="440" controls>
         <source src="demo/todo-demo.mp4" type="video/mp4">
