@@ -1,0 +1,75 @@
+<div class="container m-top-3pe">
+    <div class="card">
+
+        <!-- Task search -->
+        <div class="card-header">
+            <div class="row">
+                <div class="col">
+                    <h5>{{ constants.LABEL_BOARD }}</h5>
+                </div>
+                <div class="col-auto">
+                    <input class="form-control" type="text" [(ngModel)]="searchText"
+                        [placeholder]="constants.LABEL_SEARCH" />
+                </div>
+            </div>
+        </div>
+
+        <!-- Task board -->
+        <div class="card-body taskboard-scrollable">
+            <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
+                <div class="list-group w-100">
+                    <div class="list-group-item d-flex gap-3">
+                        <div class="task-head-block"></div>
+                        <div class="task-symbol-block center-content">
+                            <span class="icon-create pointer" (click)="onAddTask()">
+                                <i class="fas fa-plus"></i>
+                            </span>
+                        </div>
+                        <div class="task-description-block">
+                            <input class="form-control no-border" type="text"
+                                placeholder="{{ constants.LABEL_ADD_TASK }}" [(ngModel)]="description"
+                                (keydown)="onAddTask($event)" [maxlength]="constants.MAX_LENGTH">
+                        </div>
+                    </div>
+                    <div class="list-group-item d-flex gap-3" *ngFor="let task of filteredTasks"
+                        (click)="onSelectedTask(task)">
+                        <div class="task-highlight-block"></div>
+                        <div class="task-symbol-block center-content">
+                            <input class="form-check-input flex-shrink-0 task-checkbox pointer" type="checkbox"
+                                name="checkbox-{{ task.id }}" (change)="updateTask(task)" [(ngModel)]="task.completed">
+                        </div>
+                        <div class="form-control task-description-block no-border" editable="true"
+                            name="input-{{ task.id }}" [ngClass]="{ 'task-done': task.completed }"
+                            name="input-{{ task.id }}" [(ngModel)]="task.description" (input)="onInputDescription(task)"
+                            appEditablePreventEventKey="{{ constants.EVENT_KEY_ENTER }}"
+                            appEditableMaxlength="{{ constants.MAX_LENGTH }}">
+                        </div>
+                        <div class="task-remove-block center-content">
+                            <span class="icon-remove pointer" data-bs-toggle="modal" data-bs-target="#taskDeleteModel">
+                                <i class="fas fa-times"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Task delete model -->
+<div class="modal modal-sm" id="taskDeleteModel" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header border-bottom-0">
+                <h2 class="modal-title fs-5">{{ constants.LABEL_CONFIRM_DELETE }}</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+            </div>
+            <button type="submit" class="btn btn-danger m-3pe" data-bs-dismiss="modal" (click)="onDeleteTask()">
+                <i class="fas fa-trash"></i>
+            </button>
+        </div>
+    </div>
+</div>

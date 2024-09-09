@@ -1,0 +1,22 @@
+<div class="m-top-15pe">
+    <main class="form-signin w-100 m-auto">
+        <form (ngSubmit)="onLogin()" #loginForm="ngForm">
+            <h1 class="h3 mb-3 fw-normal">{{ constants.APP }}</h1>
+
+            <div class="form-floating">
+                <input type="email" class="form-control no-radius no-shadow" id="userName" name="userName"
+                    #userNameModel="ngModel" [(ngModel)]="user.userName" appDelayError [control]="userNameModel"
+                    [value]="user.userName" [errorClass]="'error'" [delay]="1000" email required>
+                <label for="email">{{ constants.LABEL_EMAIL }}</label>
+            </div>
+
+            <button class="btn btn-primary w-100 py-2 m-top-3pe" type="submit"
+                [disabled]="isLoading || loginForm.invalid" [disabled]="loginForm.invalid">
+                <i class="fas fa-sign-in-alt"></i> {{ constants.LABEL_LOGIN }}
+            </button>
+
+        </form>
+    </main>
+</div>
+
+<!-- [ngClass]="{ 'error': emailModel.invalid && emailModel.touched && emailModel.dirty && user.userName }" -->

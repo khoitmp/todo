@@ -1,0 +1,109 @@
+.list-group-item {
+    border: none;
+    border-radius: 0;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.list-group-item:focus-within {
+    border-top: 0.1px solid var(--color-focus);
+    border-bottom: 0.1px solid var(--color-focus);
+}
+
+.list-group-item:hover .task-highlight-block {
+    opacity: 1;
+}
+
+.list-group-item:hover .icon-remove,
+.list-group-item:focus-within .icon-remove {
+    opacity: 1;
+}
+
+.task-head-block {
+    width: 0.2%;
+}
+
+.task-highlight-block {
+    width: 0.2%;
+    opacity: 0;
+    background-color: var(--color-white);
+}
+
+.task-symbol-block {
+    width: 2%;
+}
+
+.task-description-block {
+    width: 75%;
+    color: var(--color-white);
+}
+
+.task-remove-block {
+    width: 10%;
+}
+
+.task-checkbox {
+    font-size: 1.500em;
+    border-radius: 0 !important;
+    background-color: var(--color-transparent);
+}
+
+.task-checkbox:focus {
+    border-color: var(--color-white);
+    outline: none;
+    box-shadow: none;
+}
+
+.task-checkbox:checked {
+    border-color: var(--color-checkbox-check);
+}
+
+.task-done {
+    text-decoration: line-through;
+    color: var(--color-done);
+}
+
+.icon-create {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+
+.icon-create:hover {
+    background-color: var(--color-highlight);
+}
+
+.icon-remove {
+    opacity: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+
+.icon-remove:hover {
+    background-color: var(--color-highlight);
+}
+
+.taskboard-scrollable {
+    height: 80vh;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.taskboard-scrollable::-webkit-scrollbar {
+    width: 8px;
+}
+
+.taskboard-scrollable::-webkit-scrollbar-track {
+    background: var(--color-scroll-track);
+    border-radius: 10px;
+}
+
+.taskboard-scrollable::-webkit-scrollbar-thumb {
+    background: var(--color-scroll-thumb);
+    border-radius: 10px;
+}
+
+.taskboard-scrollable::-webkit-scrollbar-thumb:hover {
+    background: var(--color-scroll-thumb-hover);
+}

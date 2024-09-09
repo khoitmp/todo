@@ -1,0 +1,56 @@
+services:
+  postgresdb:
+    image: postgres:latest
+    container_name: postgresdb
+    restart: on-failure
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    networks:
+      - todo
+
+  todo-app:
+    image: khoitmp/todo-app:latest
+    container_name: todo-app
+    restart: on-failure
+    ports:
+      - "10000:80"
+    depends_on:
+      - todo-service
+    networks:
+      - todo
+
+  todo-service:
+    image: khoitmp/todo-service:latest
+    container_name: todo-service
+    restart: on-failure
+    environment:
+      ASPNETCORE_ENVIRONMENT: ${ASPNETCORE_ENVIRONMENT}
+      Logging__LogLevel__Default: ${LOGGING_LOGLEVEL_DEFAULT}
+      Logging__LogLevel__Microsoft: ${LOGGING_LOGLEVEL_MICROSOFT}
+      Logging__LogLevel__System: ${LOGGING_LOGLEVEL_SYSTEM}
+      Logging__LogLevel__Microsoft.Hosting.Lifetime: ${LOGGING_LOGLEVEL_MICROSOFT_HOSTING_LIFETIME}
+      Logging__LogLevel__Microsoft.EntityFrameworkCore: ${LOGGING_LOGLEVEL_MICROSOFT_ENTITYFRAMEWORKCORE}
+      ConnectionStrings__Default: ${CONNECTION_STRING_DEFAULT}
+    ports:
+      - "11000:80"
+    depends_on:
+      - postgresdb
+    networks:
+      - todo
+
+  todo-migration:
+    image: khoitmp/todo-service:migration-latest
+    # container_name: todo-migration
+    restart: on-failure
+    depends_on:
+      - postgresdb
+    networks:
+      - todo
+
+networks:
+  todo:
+    name: todo
+    driver: bridge
+    external: false

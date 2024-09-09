@@ -1,0 +1,63 @@
+:root {
+    --color-transparent: #FFFFFF00;
+    --color-white: #FFFFFF;
+    --color-done: #FFFFFF84;
+    --color-focus: #F9F9F91F;
+    --color-highlight: #FFFFFF45;
+    --color-error: #e12b1344;
+    --color-scroll-track: #F1F1F1;
+    --color-scroll-thumb: #888888;
+    --color-scroll-thumb-hover: #555555;
+}
+
+.m-top-15pe {
+    margin-top: 15%;
+}
+
+.m-top-3pe {
+    margin-top: 3%;
+}
+
+.m-3pe {
+    margin: 3% 3% 3% 3%;
+}
+
+.m-top-5px {
+    margin-top: 5px;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.no-shadow:focus {
+    box-shadow: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.no-radius {
+    border-radius: 0;
+}
+
+.no-border {
+    border: none;
+}
+
+.no-border:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+input.error,
+select.error,
+textarea.error {
+    border: 2px solid var(--color-error) !important;
+}
