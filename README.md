@@ -11,7 +11,8 @@
 ---
 **NOTE**
 
-To simplify the usage, TODO doesn't trictly follow the requirement like UI design or controls' validation errors
+- To simplify the usage, TODO doesn't trictly follow the requirement like UI design or controls' validation errors
+- As mock API doesn't provide enough information, local APIs were developed to integrate with TODO
 
 ---
 
