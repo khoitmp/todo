@@ -43,7 +43,7 @@ export class TaskBoardComponent implements OnInit {
     this.selectedTask = userTask;
   }
 
-  // Changes only be updated if the user stop typing in 2s
+  // Changes only be updated if the user stop typing in short period of time
   onInputDescription(task: UserTask): void {
     if (!task.description)
       return;
@@ -55,7 +55,7 @@ export class TaskBoardComponent implements OnInit {
     this._debounceTimeout = setTimeout(() => {
       this.ensureLength(task);
       this.updateTask(task);
-    }, 2000);
+    }, 1000);
   }
 
   onAddTask(event: KeyboardEvent | null = null): void {
@@ -84,7 +84,8 @@ export class TaskBoardComponent implements OnInit {
 
     this._httpService.put<UpdateUserTaskCommand, BaseResponse>(url, command).subscribe({
       next: response => {
-        this.getTasks();
+        // Disable for now
+        // this.getTasks();
       },
       error: error => { }
     });
