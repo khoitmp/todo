@@ -66,8 +66,8 @@ ng serve
 - thor@email.test
 - loki@email.test
 
-### Demo
-#### Images
+## Demo
+### Images
 <p align="center">
   <img src="demo/2024-09-09 15-32-35.png" width="150" />
   <img src="demo/2024-09-09 15-33-21.png" width="150" />
@@ -75,7 +75,7 @@ ng serve
   <img src="demo/2024-09-09 15-33-39.png" width="150" />
 </p>
 
-#### Video
+### Video
 - Find demo video at path **demo/todo-demo.mp4**
 
 <div align="center">
