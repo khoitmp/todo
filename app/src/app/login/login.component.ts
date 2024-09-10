@@ -79,6 +79,6 @@ export class LoginComponent implements OnInit {
 
   private init(): void {
     this.isLoading = false;
-    this.user = { id: CONSTANTS.EMPTY, userName: CONSTANTS.EMAIL, token: CONSTANTS.EMPTY };
+    this.user = { id: CONSTANTS.EMPTY, userName: CONSTANTS.EMPTY, token: CONSTANTS.EMPTY };
   }
 }
