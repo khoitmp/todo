@@ -1,12 +1,14 @@
 # TODO
 
 ## Features
-- `Login/Logout`: The user could login/logout the app
-- `View task`: The signed-in user could see all of his/her tasks
-- `Search task`: The signed-in user could search his/her tasks
-- `Add task`: The user could add a new task, then press **↵ Enter** to save (doesn't allow empty)
-- `Update task`: The user could update a selected task inline, the description will be automatically saved after a short period of inactive (empty will not be saved, keep previous version)
-- `Delete task`: The user could delete a selected task
+| Feature        | Description                                                                                                                                                                 |
+| -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Login/Logout` | The user could login/logout the app                                                                                                                                         |
+| `View task`    | The signed-in user could see all of his/her tasks                                                                                                                           |
+| `Search task`  | The signed-in user could search his/her tasks                                                                                                                               |
+| `Add task`     | The user could add a new task, then press **↵ Enter** to save (doesn't allow empty)                                                                                         |
+| `Update task`  | The user could update a selected task inline, the description will be automatically saved after a short period of inactive (empty will not be saved, keep previous version) |
+| `Delete task`  | The user could delete a selected task                                                                                                                                       |
 
 ---
 **NOTE**
@@ -16,18 +18,26 @@
 
 ---
 
-## Run In Local
-### Structure
-- `sql`: Migration
-- `src`: Backend API (stand-alone)
-- `app`: TODO app (stand-alone)
+## Structure
+| Directory/File       | Description                           |
+| -------------------- | ------------------------------------- |
+| app                  | Stand-alone Angular front-end         |
+| src                  | Stand-alone .NET Core API back-end    |
+| sql                  | Backend database migration            |
+| Dockerfile           | Docker file for back-end              |
+| Dockerfile-app       | Docker file for front-end             |
+| Dockerfile-migration | Docker file for database migration    |
+| docker-compose.yaml  | Compose front-end, back-end, database |
 
+## Run In Local
 ### Version
-- Angular:    18.2.3
-- Node:       18.20.4
-- NPM:        10.7.0
-- Docker      27.2.0
-- .NET        8.0.401
+| Framework/Tool | Version |
+| -------------- | ------- |
+| Angular        | 18.2.3  |
+| Node           | 18.20.4 |
+| NPM            | 10.7.0  |
+| Docker         | 27.2.0  |
+| .NET           | 8.0.401 |
 
 ### 1. Run TODO in Docker mode
 ```sh
@@ -56,7 +66,7 @@ ng serve
 - thor@email.test
 - loki@email.test
 
-### Demo 
+### Demo
 #### Images
 <p align="center">
   <img src="demo/2024-09-09 15-32-35.png" width="150" />
